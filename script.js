@@ -5,4 +5,39 @@ const xWinsDisplay = document.getElementById("xWins");
 const oWinsDisplay = document.getElementById("oWins");
 let currentPlayer = "X";
 let gameBoard = ["", "", "", "", "", "", "", "", ""];
-let xWins = 0, oWins = 0;
+let xWins = 0,
+  oWins = 0;
+
+function checkWinner() {
+  const winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let combination of winningCombinations) {
+    const [a, b, c] = combination;
+    if (
+      gameBoard[a] &&
+      gameBoard[a] === gameBoard[b] &&
+      gameBoard[a] === gameBoard[c]
+    ) {
+      winnerText.textContent = `${gameBoard[a]} Wins! 🎉`;
+      document.querySelectorAll(".cell")[a].classList.add("winning");
+      document.querySelectorAll(".cell")[b].classList.add("winning");
+      document.querySelectorAll(".cell")[c].classList.add("winning");
+      gameBoard[a] === "X" ? xWins++ : oWins++;
+      updateScoreboard();
+      return true;
+    }
+  }
+  if (!gameBoard.includes("")) {
+    winnerText.textContent = "It's a Draw! 🤝";
+    return true;
+  }
+  return false;
+}
