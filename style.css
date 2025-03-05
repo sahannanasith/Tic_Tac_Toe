@@ -57,3 +57,42 @@ h1 {
     color: black;
     animation: pulse 0.5s infinite alternate;
 }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+.winner {
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.scoreboard {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: white;
+}
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    transform: scale(1.1);
+}
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out;
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
