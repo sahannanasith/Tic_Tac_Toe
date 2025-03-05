@@ -64,3 +64,8 @@ function renderBoard() {
       board.appendChild(div);
     });
   }
+
+  function updateScoreboard() {
+    xWinsDisplay.textContent = xWins;
+    oWinsDisplay.textContent = oWins;
+  }
