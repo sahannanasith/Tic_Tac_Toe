@@ -41,3 +41,13 @@ function checkWinner() {
   }
   return false;
 }
+
+function handleClick(index) {
+  if (gameBoard[index] || winnerText.textContent) return;
+  gameBoard[index] = currentPlayer;
+  renderBoard();
+  if (!checkWinner()) {
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    currentPlayerDisplay.textContent = currentPlayer;
+  }
+}
