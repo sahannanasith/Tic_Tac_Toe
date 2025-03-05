@@ -51,3 +51,16 @@ function handleClick(index) {
     currentPlayerDisplay.textContent = currentPlayer;
   }
 }
+
+function renderBoard() {
+    board.innerHTML = "";
+    gameBoard.forEach((cell, index) => {
+      const div = document.createElement("div");
+      div.classList.add("cell");
+      if (cell) div.classList.add("taken");
+      div.textContent = cell;
+      div.setAttribute("aria-label", `Cell ${index + 1}, ${cell || "empty"}`);
+      div.addEventListener("click", () => handleClick(index));
+      board.appendChild(div);
+    });
+  }
