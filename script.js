@@ -81,3 +81,5 @@ function renderBoard() {
       document.body.classList.remove("fade-out");
     }, 500);
   }
+
+  renderBoard();
