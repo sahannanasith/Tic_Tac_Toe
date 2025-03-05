@@ -42,3 +42,18 @@ h1 {
     color: white;
     font-weight: bold;
 }
+
+.cell:hover:not(.taken) {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #ff99ac, #ff6a88);
+}
+
+.cell.taken {
+    cursor: not-allowed;
+}
+
+.cell.winning {
+    background: linear-gradient(135deg, #ffeb3b, #ffc107);
+    color: black;
+    animation: pulse 0.5s infinite alternate;
+}
