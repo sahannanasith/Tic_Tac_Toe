@@ -69,3 +69,15 @@ function renderBoard() {
     xWinsDisplay.textContent = xWins;
     oWinsDisplay.textContent = oWins;
   }
+
+  function resetGame() {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      gameBoard = ["", "", "", "", "", "", "", "", ""];
+      currentPlayer = "X";
+      winnerText.textContent = "";
+      currentPlayerDisplay.textContent = currentPlayer;
+      renderBoard();
+      document.body.classList.remove("fade-out");
+    }, 500);
+  }
